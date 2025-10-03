@@ -24,7 +24,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '../components/ui/select';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { Separator } from '../components/ui/separator';
 import { MultiSelect } from '../components/ui/multi-select';
 

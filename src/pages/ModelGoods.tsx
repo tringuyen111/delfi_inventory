@@ -25,7 +25,7 @@ import {
   SelectValue,
 } from '../components/ui/select';
 import { Checkbox } from '../components/ui/checkbox';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { Separator } from '../components/ui/separator';
 import { MultiSelect } from '../components/ui/multi-select';
 

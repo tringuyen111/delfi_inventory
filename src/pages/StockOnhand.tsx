@@ -53,7 +53,7 @@ import {
 import { Switch } from '../components/ui/switch';
 import { Separator } from '../components/ui/separator';
 import { Checkbox } from '../components/ui/checkbox';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 
 // Types
 interface StockOnhandItem {
