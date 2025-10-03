@@ -1,6 +1,7 @@
+import { useEffect, useState } from 'react';
 import { Bell, Moon, Sun, User } from 'lucide-react';
+import { useTheme } from 'next-themes';
 import { Button } from '../ui/button';
-import { useTheme } from '../../contexts/ThemeContext';
 import { useLanguage } from '../../contexts/LanguageContext';
 import {
   DropdownMenu,
@@ -24,7 +25,14 @@ interface HeaderProps {
 }
 
 export function Header({ breadcrumbs }: HeaderProps) {
-  const { theme, toggleTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  const currentTheme = mounted ? resolvedTheme ?? 'light' : 'light';
+  const handleToggleTheme = () => {
+    setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+  };
   const { language, setLanguage, t } = useLanguage();
 
   return (
@@ -57,13 +65,13 @@ export function Header({ breadcrumbs }: HeaderProps) {
         <Button
           variant="ghost"
           size="icon"
-          onClick={toggleTheme}
+          onClick={handleToggleTheme}
           className="h-9 w-9"
         >
-          {theme === 'light' ? (
-            <Moon className="h-5 w-5" />
-          ) : (
+          {currentTheme === 'dark' ? (
             <Sun className="h-5 w-5" />
+          ) : (
+            <Moon className="h-5 w-5" />
           )}
         </Button>
 
