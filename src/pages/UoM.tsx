@@ -33,7 +33,7 @@ import {
   SelectValue,
 } from '../components/ui/select';
 import { RadioGroup, RadioGroupItem } from '../components/ui/radio-group';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 
 
 interface UoMData {
